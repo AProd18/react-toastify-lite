@@ -71,65 +71,35 @@ toast({ type: "error", message: "Something went wrong", duration: 5000 });
 #📍 Positions
 ````jsx
 <ToastProvider position="bottom-left">...</ToastProvider>
-<<<<<<< HEAD
 `````
 
 ## 🧩 API
 
 ### `ToastProvider` Props
 
-=======
-
-## 🧩 API
-
-### `ToastProvider` Props
-
-> > > > > > > 95572b0b0a31f4f0d4ddb00ccb022792daf1be3b
-> > > > > > > | Prop | Type | Default | Description |
-> > > > > > > | ----------- | ------ | ----------- | -------------------------------- |
-> > > > > > > | `position` | string | `top-right` | Toast placement |
-> > > > > > > | `icons` | object | Built-in | Custom React components per type |
-> > > > > > > | `animation` | string | `fade` | Animation type |
+| Prop        | Type   | Default     | Description                      |
+| ----------- | ------ | ----------- | -------------------------------- |
+| `position`  | string | `top-right` | Toast placement                  |
+| `icons`     | object | Built-in    | Custom React components per type |
+| `animation` | string | `fade`      | Animation type                   |
 
 ### `toast(options)`
 
-<<<<<<< HEAD
-
-=======
-
-> > > > > > > 95572b0b0a31f4f0d4ddb00ccb022792daf1be3b
-> > > > > > > | Prop | Type | Required | Description |
-> > > > > > > | ---------- | ------ | -------- | ----------------------------------------- |
-> > > > > > > | `type` | string | No | `success`, `error`, `warning`, `info` |
-> > > > > > > | `message` | string | Yes | Message to display |
-> > > > > > > | `duration` | number | No | Auto-close time in ms (0 = no auto close) |
-
-<<<<<<< HEAD
-
-## 📁 File Size
-
-- Minified ~4KB
-- # Gzipped ~2KB
+| Prop       | Type   | Required | Description                               |
+| ---------- | ------ | -------- | ----------------------------------------- |
+| `type`     | string | No       | `success`, `error`, `warning`, `info`     |
+| `message`  | string | Yes      | Message to display                        |
+| `duration` | number | No       | Auto-close time in ms (0 = no auto close) |
 
 ## 📁 File Size
 
 - Minified ~4KB
 - Gzipped ~2KB
-  > > > > > > > 95572b0b0a31f4f0d4ddb00ccb022792daf1be3b
 
 ## 📃 License
 
 ## 🧪 Coming Soon
 
-<<<<<<< HEAD
-
-- Dark mode support
-- Queueing multiple toasts
-- # Progress bars
 - Dark mode support
 - Queueing multiple toasts
 - Progress bars
-
-```
->>>>>>> 95572b0b0a31f4f0d4ddb00ccb022792daf1be3b
-```
