@@ -1,4 +1,4 @@
-import React, { createContext, useState, useCallback } from "react";
+import React, { createContext, useState, useCallback, useEffect } from "react";
 import { setToastFunction } from "./toast";
 import ToastContainer from "./ToastContainer";
 
@@ -24,17 +24,21 @@ export default function ToastProvider({
     "center",
   ];
 
-  const addToast = useCallback(({ type, message }) => {
+  const addToast = useCallback(({ type, message, duration = 1000 }) => {
     const id = Date.now();
     setToasts((prev) => [...prev, { id, type, message }]);
 
-    setTimeout(() => {
-      setToasts((prev) => prev.filter((t) => t.id !== id));
-    }, 3000);
+    if (duration > 0) {
+      setTimeout(() => {
+        setToasts((prev) => prev.filter((t) => t.id !== id));
+      }, duration);
+    }
   }, []);
 
   // Connect the global toast function with the local handler
-  setToastFunction(addToast);
+  useEffect(() => {
+    setToastFunction(addToast);
+  }, [addToast]);
 
   return (
     <>

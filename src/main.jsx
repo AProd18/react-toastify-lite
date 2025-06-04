@@ -11,8 +11,19 @@ const MyIcons = {
 function App() {
   return (
     <div>
-      <button onClick={() => toast({ type: "success", message: "Saved!" })}>
+      <button
+        onClick={() =>
+          toast({ type: "success", message: "Saved!", duration: 3000 })
+        }
+      >
         Show Success Toast
+      </button>
+      <button
+        onClick={() =>
+          toast({ type: "error", message: "Error!", duration: 5000 })
+        }
+      >
+        Show Error Toast 5s
       </button>
     </div>
   );
