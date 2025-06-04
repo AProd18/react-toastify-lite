@@ -71,9 +71,12 @@ toast({ type: "error", message: "Something went wrong", duration: 5000 });
 #📍 Positions
 ````jsx
 <ToastProvider position="bottom-left">...</ToastProvider>
+`````
 
 ## 🧩 API
+
 ### `ToastProvider` Props
+
 | Prop        | Type   | Default     | Description                      |
 | ----------- | ------ | ----------- | -------------------------------- |
 | `position`  | string | `top-right` | Toast placement                  |
@@ -81,21 +84,22 @@ toast({ type: "error", message: "Something went wrong", duration: 5000 });
 | `animation` | string | `fade`      | Animation type                   |
 
 ### `toast(options)`
+
 | Prop       | Type   | Required | Description                               |
 | ---------- | ------ | -------- | ----------------------------------------- |
 | `type`     | string | No       | `success`, `error`, `warning`, `info`     |
 | `message`  | string | Yes      | Message to display                        |
 | `duration` | number | No       | Auto-close time in ms (0 = no auto close) |
 
-
 ## 📁 File Size
-- Minified	~4KB
-- Gzipped	~2KB
+
+- Minified ~4KB
+- Gzipped ~2KB
 
 ## 📃 License
 
 ## 🧪 Coming Soon
+
 - Dark mode support
 - Queueing multiple toasts
 - Progress bars
-`````
