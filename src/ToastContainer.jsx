@@ -5,6 +5,7 @@ export default function ToastContainer({
   position,
   onRemove,
   icons = {},
+  animation,
 }) {
   function getIcon(type) {
     if (icons[type]) {
@@ -26,6 +27,14 @@ export default function ToastContainer({
     }
   }
 
+  const animationClass =
+    {
+      fade: "rtl-toast-fade",
+      slide: "rtl-toast-slide",
+      bounce: "rtl-toast-bounce",
+      zoom: "rtl-toast-zoom",
+    }[animation] || "rtl-toast-fade";
+
   return (
     <div
       className={`rtl-toast-container rtl-toast-container-${position}`}
@@ -36,7 +45,7 @@ export default function ToastContainer({
       {toasts.map((toast) => (
         <section
           key={toast.id}
-          className={`rtl-toast rtl-${toast.type}`}
+          className={`rtl-toast rtl-${toast.type} ${animationClass}`}
           role="alert"
           aria-live={toast.type === "error" ? "assertive" : "polite"}
           aria-atomic="true"

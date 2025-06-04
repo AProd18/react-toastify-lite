@@ -6,6 +6,7 @@ export default function ToastProvider({
   children,
   position = "top-right",
   icons = {},
+  animation = "fade",
 }) {
   const [toasts, setToasts] = useState([]);
 
@@ -43,6 +44,7 @@ export default function ToastProvider({
         position={position}
         onRemove={removeToast}
         icons={icons}
+        animation={animation}
       />
     </>
   );

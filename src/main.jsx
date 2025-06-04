@@ -19,7 +19,7 @@ function App() {
 }
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <ToastProvider position="center" icons={MyIcons}>
+  <ToastProvider position="center" icons={MyIcons} animation="bounce">
     <App />
   </ToastProvider>
 );
