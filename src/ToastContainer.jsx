@@ -27,9 +27,20 @@ export default function ToastContainer({
   }
 
   return (
-    <div className={`rtl-toast-container rtl-toast-container-${position}`}>
+    <div
+      className={`rtl-toast-container rtl-toast-container-${position}`}
+      role="region"
+      aria-live="polite"
+      aria-atomic="false"
+    >
       {toasts.map((toast) => (
-        <div key={toast.id} className={`rtl-toast rtl-${toast.type}`}>
+        <section
+          key={toast.id}
+          className={`rtl-toast rtl-${toast.type}`}
+          role="alert"
+          aria-live={toast.type === "error" ? "assertive" : "polite"}
+          aria-atomic="true"
+        >
           <span className="rtl-toast-icon">{getIcon(toast.type)}</span>
           <span className="rtl-toast-message">{toast.message}</span>
           <button
@@ -39,7 +50,7 @@ export default function ToastContainer({
           >
             ×
           </button>
-        </div>
+        </section>
       ))}
     </div>
   );
