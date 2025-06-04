@@ -1,10 +1,10 @@
-import React, { createContext, useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { setToastFunction } from "./toast";
 import ToastContainer from "./ToastContainer";
 
 export default function ToastProvider({
   children,
-  position = "top-right",
+  position = "bottom-right",
   icons = {},
   animation = "fade",
 }) {
@@ -23,6 +23,10 @@ export default function ToastProvider({
     "bottom-center",
     "center",
   ];
+
+  const finalPosition = validPositions.includes(position)
+    ? position
+    : "top-right";
 
   const addToast = useCallback(({ type, message, duration = 1000 }) => {
     const id = Date.now();
@@ -45,7 +49,7 @@ export default function ToastProvider({
       {children}
       <ToastContainer
         toasts={toasts}
-        position={position}
+        position={finalPosition}
         onRemove={removeToast}
         icons={icons}
         animation={animation}
