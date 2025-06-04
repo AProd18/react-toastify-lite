@@ -5,6 +5,10 @@ import ToastContainer from "./ToastContainer";
 export default function ToastProvider({ children, position = "top-right" }) {
   const [toasts, setToasts] = useState([]);
 
+  const removeToast = useCallback((id) => {
+    setToasts((prev) => prev.filter((t) => t.id !== id));
+  }, []);
+
   const validPositions = [
     "top-left",
     "top-right",
@@ -30,7 +34,11 @@ export default function ToastProvider({ children, position = "top-right" }) {
   return (
     <>
       {children}
-      <ToastContainer toasts={toasts} position={position} />
+      <ToastContainer
+        toasts={toasts}
+        position={position}
+        onRemove={removeToast}
+      />
     </>
   );
 }

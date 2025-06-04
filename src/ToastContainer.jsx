@@ -1,6 +1,6 @@
 import "./styles.css";
 
-export default function ToastContainer({ toasts, position }) {
+export default function ToastContainer({ toasts, position, onRemove }) {
   function getIcon(type) {
     switch (type) {
       case "success":
@@ -20,6 +20,13 @@ export default function ToastContainer({ toasts, position }) {
         <div key={toast.id} className={`rtl-toast rtl-${toast.type}`}>
           <span className="rtl-toast-icon">{getIcon(toast.type)}</span>
           <span className="rtl-toast-message">{toast.message}</span>
+          <button
+            className="rtl-toast-close"
+            onClick={() => onRemove(toast.id)}
+            aria-label="Close toast"
+          >
+            ×
+          </button>
         </div>
       ))}
     </div>
