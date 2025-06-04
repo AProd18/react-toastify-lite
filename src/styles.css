@@ -1,0 +1,47 @@
+.rtl-toast-container {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 9999;
+}
+
+.rtl-toast {
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  min-width: 200px;
+  max-width: 300px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  animation: fadein 0.3s ease;
+}
+
+.rtl-default {
+  background: #333;
+}
+
+.rtl-success {
+  background: #28a745;
+}
+
+.rtl-error {
+  background: #dc3545;
+}
+
+.rtl-info {
+  background: #007bff;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+    transform: translateY(-10%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
