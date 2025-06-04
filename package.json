@@ -12,7 +12,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AProd18/react-toastify-lite.git"
+    "url": "git+https://github.com/AProd18/toastify-lite-react.git"
   },
   "dependencies": {
     "react": "^19.1.0",
