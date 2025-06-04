@@ -112,3 +112,10 @@ toast({ type: "error", message: "Something went wrong", duration: 5000 });
 - Dark mode support
 - Queueing multiple toasts
 - Progress bars
+
+## 🤝 Contributing
+
+Contributions are welcome!  
+If you'd like to help improve **toastify-lite-react**, feel free to open issues or submit pull requests.
+
+---
