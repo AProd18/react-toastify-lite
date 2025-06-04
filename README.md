@@ -49,7 +49,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 
 ## ⚙️ Advanced Options
 
-#✅ Custom Icons
+###✅ Custom Icons
 
 ```jsx
 const MyIcons = {
@@ -64,19 +64,19 @@ const MyIcons = {
 <ToastProvider icons={MyIcons}>...</ToastProvider>
 ```
 
-#⏱️ Custom Duration
+###⏱️ Custom Duration
 
 ```jsx
 toast({ type: "error", message: "Something went wrong", duration: 5000 });
 ```
 
-#✨ Animation Types
+###✨ Animation Types
 
 ```jsx
 <ToastProvider animation="slide">...</ToastProvider>
 ```
 
-#📍 Positions
+###📍 Positions
 
 ```jsx
 <ToastProvider position="bottom-left">...</ToastProvider>
