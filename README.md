@@ -26,7 +26,7 @@ npm install react-toastify-lite
 
 ## 🧠 Basic Usage
 
-`````jsx
+```jsx
 import ReactDOM from "react-dom/client";
 import { ToastProvider, toast } from "react-toastify-lite";
 
@@ -45,33 +45,42 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <App />
   </ToastProvider>
 );
-
+```
 
 ## ⚙️ Advanced Options
 
 #✅ Custom Icons
-````jsx
+
+```jsx
 const MyIcons = {
   success: () => <span>✅</span>,
   error: () => <span>🔥</span>,
   warning: () => <span>⚠️</span>,
   info: () => <span>ℹ️</span>,
 };
-````jsx
+```
+
+```jsx
 <ToastProvider icons={MyIcons}>...</ToastProvider>
+```
 
 #⏱️ Custom Duration
-````jsx
+
+```jsx
 toast({ type: "error", message: "Something went wrong", duration: 5000 });
+```
 
 #✨ Animation Types
-````jsx
+
+```jsx
 <ToastProvider animation="slide">...</ToastProvider>
+```
 
 #📍 Positions
-````jsx
+
+```jsx
 <ToastProvider position="bottom-left">...</ToastProvider>
-`````
+```
 
 ## 🧩 API
 
