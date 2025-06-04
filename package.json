@@ -1,15 +1,19 @@
 {
-  "name": "react-toastify-lite",
+  "name": "toastify-lite-react",
   "version": "1.0.0",
-  "description": "",
+  "description": "Lightweight toast notification library for React.",
   "main": "index.jsx",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vite"
   },
   "keywords": [],
-  "author": "",
+  "author": "Aleksandar Prodanovic",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AProd18/react-toastify-lite.git"
+  },
   "dependencies": {
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
