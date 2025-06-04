@@ -1,7 +1,17 @@
 import "./styles.css";
 
-export default function ToastContainer({ toasts, position, onRemove }) {
+export default function ToastContainer({
+  toasts,
+  position,
+  onRemove,
+  icons = {},
+}) {
   function getIcon(type) {
+    if (icons[type]) {
+      const IconComponent = icons[type];
+      return <IconComponent />;
+    }
+
     switch (type) {
       case "success":
         return "✔️";
@@ -9,6 +19,8 @@ export default function ToastContainer({ toasts, position, onRemove }) {
         return "❌";
       case "warning":
         return "⚠️";
+      case "info":
+        return "ℹ️";
       default:
         return "";
     }

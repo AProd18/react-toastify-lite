@@ -2,7 +2,11 @@ import React, { createContext, useState, useCallback } from "react";
 import { setToastFunction } from "./toast";
 import ToastContainer from "./ToastContainer";
 
-export default function ToastProvider({ children, position = "top-right" }) {
+export default function ToastProvider({
+  children,
+  position = "top-right",
+  icons = {},
+}) {
   const [toasts, setToasts] = useState([]);
 
   const removeToast = useCallback((id) => {
@@ -38,6 +42,7 @@ export default function ToastProvider({ children, position = "top-right" }) {
         toasts={toasts}
         position={position}
         onRemove={removeToast}
+        icons={icons}
       />
     </>
   );

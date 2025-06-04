@@ -1,6 +1,13 @@
 import ReactDOM from "react-dom/client";
 import { ToastProvider, toast } from "../src";
 
+const MyIcons = {
+  success: () => <span style={{ color: "green" }}>✔️</span>,
+  error: () => <span style={{ color: "red" }}>❌</span>,
+  warning: () => <span style={{ color: "orange" }}>⚠️</span>,
+  info: () => <span style={{ color: "blue" }}>ℹ️</span>,
+};
+
 function App() {
   return (
     <div>
@@ -12,7 +19,7 @@ function App() {
 }
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <ToastProvider position="center">
+  <ToastProvider position="center" icons={MyIcons}>
     <App />
   </ToastProvider>
 );
