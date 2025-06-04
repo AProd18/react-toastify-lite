@@ -12,7 +12,7 @@ function App() {
 }
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <ToastProvider>
+  <ToastProvider position="center">
     <App />
   </ToastProvider>
 );

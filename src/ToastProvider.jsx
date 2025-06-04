@@ -2,8 +2,18 @@ import React, { createContext, useState, useCallback } from "react";
 import { setToastFunction } from "./toast";
 import ToastContainer from "./ToastContainer";
 
-export default function ToastProvider({ children }) {
+export default function ToastProvider({ children, position = "top-right" }) {
   const [toasts, setToasts] = useState([]);
+
+  const validPositions = [
+    "top-left",
+    "top-right",
+    "top-center",
+    "bottom-left",
+    "bottom-right",
+    "bottom-center",
+    "center",
+  ];
 
   const addToast = useCallback(({ type, message }) => {
     const id = Date.now();
@@ -20,7 +30,7 @@ export default function ToastProvider({ children }) {
   return (
     <>
       {children}
-      <ToastContainer toasts={toasts} />
+      <ToastContainer toasts={toasts} position={position} />
     </>
   );
 }

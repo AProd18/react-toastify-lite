@@ -1,6 +1,6 @@
 import "./styles.css";
 
-export default function ToastContainer({ toasts }) {
+export default function ToastContainer({ toasts, position }) {
   function getIcon(type) {
     switch (type) {
       case "success":
@@ -15,7 +15,7 @@ export default function ToastContainer({ toasts }) {
   }
 
   return (
-    <div className="rtl-toast-container">
+    <div className={`rtl-toast-container rtl-toast-container-${position}`}>
       {toasts.map((toast) => (
         <div key={toast.id} className={`rtl-toast rtl-${toast.type}`}>
           <span className="rtl-toast-icon">{getIcon(toast.type)}</span>
