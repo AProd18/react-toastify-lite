@@ -13,14 +13,24 @@ function App() {
     <div>
       <button
         onClick={() =>
-          toast({ type: "success", message: "Saved!", duration: 3000 })
+          toast({
+            type: "success",
+            message: "Saved!",
+            duration: 3000,
+            dedupe: true,
+          })
         }
       >
         Show Success Toast
       </button>
       <button
         onClick={() =>
-          toast({ type: "error", message: "Error!", duration: 5000 })
+          toast({
+            type: "error",
+            message: "Error!",
+            duration: 5000,
+            dedupe: true,
+          })
         }
       >
         Show Error Toast 5s

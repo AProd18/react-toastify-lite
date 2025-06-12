@@ -54,7 +54,7 @@ toast({ type, message, duration })
 | `message`  | string | Yes      | Text to display in the toast                             |
 | `duration` | number | No       | Auto-dismiss time in milliseconds (default: `1000`)      |
 
-<ToastProvider />
+`<ToastProvider />`
 Wrap your application with `ToastProvider`.
 
 | Prop        | Type   | Default        | Description                                                       |
@@ -116,8 +116,9 @@ Positions
 
 - You don’t need to use useContext or useRef to show a toast — just call toast() from anywhere after ToastProvider is mounted.
 - You can set duration: 0 to disable auto-dismiss and manually close toasts via the × button.
+- Make sure `<ToastProvider />` is mounted **before** calling `toast()`. If you call `toast()` too early, a warning will be shown in the console.
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome!  
 If you'd like to help improve **toastify-lite-react**, feel free to open issues or submit pull requests.

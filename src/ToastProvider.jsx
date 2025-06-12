@@ -28,18 +28,26 @@ export default function ToastProvider({
     ? position
     : "top-right";
 
-  const addToast = useCallback(({ type, message, duration = 1000 }) => {
-    const id = Date.now();
-    setToasts((prev) => [...prev, { id, type, message }]);
+  const addToast = useCallback(
+    ({ type, message, duration = 1000, dedupe = false }) => {
+      const id = Date.now();
 
-    if (duration > 0) {
-      setTimeout(() => {
-        setToasts((prev) => prev.filter((t) => t.id !== id));
-      }, duration);
-    }
-  }, []);
+      setToasts((prev) => {
+        const isDuplicate = dedupe && prev.some((t) => t.message === message);
+        if (isDuplicate) return prev;
 
-  // Connect the global toast function with the local handler
+        return [...prev, { id, type, message, dedupe }];
+      });
+
+      if (duration > 0) {
+        setTimeout(() => {
+          setToasts((prev) => prev.filter((t) => t.id !== id));
+        }, duration);
+      }
+    },
+    []
+  );
+
   useEffect(() => {
     setToastFunction(addToast);
   }, [addToast]);
